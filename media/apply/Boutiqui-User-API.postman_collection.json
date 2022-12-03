@@ -1,0 +1,2086 @@
+{
+	"info": {
+		"_postman_id": "bfbbe12b-0b3e-4513-8d6e-6f070ccc4b14",
+		"name": "Boutiqui User API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4265965"
+	},
+	"item": [
+		{
+			"name": "AUTHENTICATION",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"user@app.com\",\r\n    \"password\": \"password\",\r\n    \"device_token\" : \"fcm token from firebase\",\r\n    \"uid\" : \"user id in firebase\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}login",
+							"host": [
+								"{{url}}login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"company@app.com\",\r\n    \"password\": \"password\",\r\n    \"device_token\" : \"fcm token from firebase\",\r\n    \"uid\" : \"user id in firebase\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}login",
+									"host": [
+										"{{url}}login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:21:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:21:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xae69838c761b2da734c43615aada16d1"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"4|HMErqUVxotqLHciklS8Mfeaghw6KH6t9EdNUoiZV\",\n    \"token_type\": \"Bearer\",\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Burley Robel DDS\",\n        \"email\": \"user@app.com\",\n        \"phone\": \"774857141\",\n        \"country_code\": \"213\",\n        \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n        \"state\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "upload new image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/karal/OneDrive/Desktop/Untitled.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}upload/image",
+							"host": [
+								"{{url}}upload"
+							],
+							"path": [
+								"image"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "upload new image example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/karal/OneDrive/Desktop/Untitled.png"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}upload/image",
+									"host": [
+										"{{url}}upload"
+									],
+									"path": [
+										"image"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:26:01 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:26:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xaf00c1769809010f8a88db87a32faa3f"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"message\": \"تم تحديث السجل بنجاح\"\n    },\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"Burley Robel DDS\",\n            \"email\": \"user@app.com\",\n            \"phone\": \"774857141\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/storage/user/img/4ZIUcsggWsHhnqZXOsa5i7OZl.png\",\n            \"state\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "me",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}me",
+							"host": [
+								"{{url}}me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "me example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}me",
+									"host": [
+										"{{url}}me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:22:50 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:22:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X61c114fdf6dde41720954d45e9dfe8ce"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"Burley Robel DDS\",\n        \"email\": \"user@app.com\",\n        \"phone\": \"774857141\",\n        \"country_code\": \"213\",\n        \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n        \"state\": 1\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{url}}logout",
+							"host": [
+								"{{url}}logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}logout",
+									"host": [
+										"{{url}}logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:27:05 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:27:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xa3194b200d3ed54adcbc28104ceea457"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"message\": \"logout successfully\"\n    },\n    \"\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "User testing update",
+									"description": "user name required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "user@app.com",
+									"description": "user email required must be unique",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "2323223232",
+									"description": "user phone number  must be unique",
+									"type": "text"
+								},
+								{
+									"key": "country_code",
+									"value": "+213",
+									"description": "country code required with symbol +",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "put",
+									"description": "required",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}update",
+							"host": [
+								"{{url}}update"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "User testing update",
+											"description": "user name required",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "2323223232",
+											"description": "user phone number  must be unique",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"description": "company image not required ",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "country_code",
+											"value": "+213",
+											"description": "country code required with symbol +",
+											"type": "text"
+										},
+										{
+											"key": "_method",
+											"value": "put",
+											"description": "required",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "user@app.com",
+											"description": "user email required must be unique",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}update",
+									"host": [
+										"{{url}}update"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:38:51 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 19:38:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "Xf26ad1c6a84c851af8ad0b475c194c15"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": {\n        \"message\": \"تم تحديث السجل بنجاح\"\n    },\n    \"data\": {\n        \"user\": {\n            \"id\": 1,\n            \"name\": \"User testing update\",\n            \"email\": \"user@app.com\",\n            \"phone\": \"2323223232\",\n            \"country_code\": \"+213\",\n            \"image\": \"http://127.0.0.1:8000/storage/user/img/4ZIUcsggWsHhnqZXOsa5i7OZl.png\",\n            \"state\": 1\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "jhon do",
+									"description": "user name required",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "jhon@app.com",
+									"description": "user email required and must be unique",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"description": "user password max:24 min:8",
+									"type": "text"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "password",
+									"description": "the password confirmation must match your password.",
+									"type": "text"
+								},
+								{
+									"key": "country_code",
+									"value": "+213",
+									"description": "country code required with symbol +",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "232424242424",
+									"description": "user phone number",
+									"type": "text"
+								},
+								{
+									"key": "device_token",
+									"value": "FCM token from firebase",
+									"description": "this token will be used in push notification",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "El Oued Algeria",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}register",
+							"host": [
+								"{{url}}register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "register example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "jhon do",
+											"description": "user name required",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "jhon@app.com",
+											"description": "user email required and must be unique",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"description": "user password max:24 min:8",
+											"type": "text"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "password",
+											"description": "the password confirmation must match your password.",
+											"type": "text"
+										},
+										{
+											"key": "country_code",
+											"value": "+213",
+											"description": "country code required with symbol +",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "232424242424",
+											"description": "user phone number",
+											"type": "text"
+										},
+										{
+											"key": "device_token",
+											"value": "FCM token from firebase",
+											"description": "this token will be used in push notification",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}register",
+									"host": [
+										"{{url}}register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 21:04:19 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 21:04:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X7499742c7079a7e8b11756aace0088b4"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"6|vB210eXkM29KVyPRzytObnqE9QHT0STIB0WSZEWq\",\n    \"token_type\": \"Bearer\",\n    \"user\": {\n        \"id\": 22,\n        \"name\": \"jhon do\",\n        \"email\": \"jhon@app.com\",\n        \"phone\": \"232424242424\",\n        \"country_code\": \"+213\",\n        \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n        \"state\": null\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Sellers",
+			"item": [
+				{
+					"name": "list of sellers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}sellers",
+							"host": [
+								"{{url}}sellers"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "Miss Lea",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list of companies example with search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}companies?search=Miss Lea",
+									"host": [
+										"{{url}}companies"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Miss Lea"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 22:47:24 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 22:47:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X4909f04ccfb8d3a59910ff1a0c1175c4"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Miss Lea Mertz Jr.\",\n            \"email\": \"bechtelar.aisha@example.com\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 25,\n            \"longitude\": 49,\n            \"address\": \"44136 Trevion Ferry Suite 712\\nFlorencioview, NC 25782\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/companies?search=Miss%20Lea&page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/companies?search=Miss%20Lea&page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/companies?search=Miss%20Lea&page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/companies\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+						},
+						{
+							"name": "list of companies example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}companies",
+									"host": [
+										"{{url}}companies"
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "Miss Lea",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 22:47:39 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 22:47:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X12905165e1df76d43d8d476945882c96"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Miss Lea Mertz Jr.\",\n            \"email\": \"bechtelar.aisha@example.com\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 25,\n            \"longitude\": 49,\n            \"address\": \"44136 Trevion Ferry Suite 712\\nFlorencioview, NC 25782\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Violette O'Connell\",\n            \"email\": \"ernser.pedro@example.net\",\n            \"phone\": \"+1 (574) 751-4980\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 2,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 27,\n            \"longitude\": 44,\n            \"address\": \"4726 Briana Camp Suite 486\\nLindfort, NY 79920-2256\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Llewellyn Koss\",\n            \"email\": \"stacey.ryan@example.org\",\n            \"phone\": \"424-266-1167\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 2,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 22,\n            \"longitude\": 49,\n            \"address\": \"163 Turcotte Locks\\nPort Armando, NJ 26187\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Kamryn Adams\",\n            \"email\": \"cornell99@example.org\",\n            \"phone\": \"1-404-477-2804\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 17,\n            \"longitude\": 48,\n            \"address\": \"630 Victor Points\\nLake Sarina, NE 77879-6441\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Jaylon Gulgowski\",\n            \"email\": \"mgusikowski@example.org\",\n            \"phone\": \"1-219-949-7884\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 23,\n            \"longitude\": 48,\n            \"address\": \"7782 Linnie Port\\nLake Sedrickberg, VA 77755-8090\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Edythe Dooley\",\n            \"email\": \"echristiansen@example.org\",\n            \"phone\": \"303-569-9879\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 23,\n            \"longitude\": 43,\n            \"address\": \"9454 Shields Greens Apt. 049\\nNorth Lorenz, KS 33736\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Dr. Lynn Oberbrunner V\",\n            \"email\": \"adelle53@example.net\",\n            \"phone\": \"+1-949-704-9593\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 2,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 26,\n            \"longitude\": 50,\n            \"address\": \"61186 Schulist Inlet\\nCroninborough, MO 58267-2082\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Santos Labadie\",\n            \"email\": \"kutch.berneice@example.net\",\n            \"phone\": \"1-209-675-7891\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 19,\n            \"longitude\": 44,\n            \"address\": \"8971 Walker Isle Apt. 269\\nFabianport, CO 43026\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Karli Nader DDS\",\n            \"email\": \"isatterfield@example.com\",\n            \"phone\": \"(404) 698-9708\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 2,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 26,\n            \"longitude\": 39,\n            \"address\": \"6493 Howe Underpass Suite 061\\nLake Berta, SD 38842-6605\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Idella Doyle\",\n            \"email\": \"wilbert12@example.org\",\n            \"phone\": \"+1.747.866.3106\",\n            \"country_code\": \"99\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": 1,\n            \"facebook\": null,\n            \"whatsapp\": null,\n            \"snapchat\": null,\n            \"instagram\": null,\n            \"twitter\": null,\n            \"rate\": null,\n            \"latitude\": 17,\n            \"longitude\": 49,\n            \"address\": \"5938 Hillary Drive\\nBorershire, CO 80198\",\n            \"description\": null,\n            \"trade_register\": \"http://127.0.0.1:8000/\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/companies?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/companies?page=3\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/user/companies?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 3,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/companies?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/companies?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/companies?page=3\",\n                \"label\": \"3\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/companies?page=2\",\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/companies\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 21\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "seller profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}sellers/:id",
+							"host": [
+								"{{url}}sellers"
+							],
+							"path": [
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "company profile example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}companies/:id",
+									"host": [
+										"{{url}}companies"
+									],
+									"path": [
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "company id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 22:46:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 Nov 2021 22:46:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.8"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "phpdebugbar-id",
+									"value": "X60746a8354fe93cd97b40314a80ea01b"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Miss Lea Mertz Jr.\",\n        \"email\": \"bechtelar.aisha@example.com\",\n        \"phone\": \"770271561\",\n        \"country_code\": \"213\",\n        \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n        \"state\": 1,\n        \"checked\": 1,\n        \"facebook\": null,\n        \"whatsapp\": null,\n        \"snapchat\": null,\n        \"instagram\": null,\n        \"twitter\": null,\n        \"rate\": null,\n        \"latitude\": 25,\n        \"longitude\": 49,\n        \"address\": \"44136 Trevion Ferry Suite 712\\nFlorencioview, NC 25782\",\n        \"description\": null,\n        \"trade_register\": \"http://127.0.0.1:8000/\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Offers",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "3|LSS0DQXrjfWVC6dlF8Ho7iwxqm01eWAq3ERTqtcs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}offers",
+							"host": [
+								"{{url}}offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "5|GRuNHpzUX7NJTHZ92mLMKF8awywZsT4zLU66xn5U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/boutiqui-back-end/public/api/seller/offers/3?mine=2",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"boutiqui-back-end",
+								"public",
+								"api",
+								"seller",
+								"offers",
+								"3"
+							],
+							"query": [
+								{
+									"key": "mine",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get One By Seller Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "105|TwAXPDNcdRl2SefC37D32gEe7nx3suCHVcjlad6p",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}offers/seller/28",
+							"host": [
+								"{{url}}offers"
+							],
+							"path": [
+								"seller",
+								"28"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Favorites By Me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|iZU5WgJ93JSysF60tvbyZJgjSh3JcP8tDnRbH3W2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}offers/favorites/me",
+							"host": [
+								"{{url}}offers"
+							],
+							"path": [
+								"favorites",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Offers By Subcategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "4|iZU5WgJ93JSysF60tvbyZJgjSh3JcP8tDnRbH3W2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}offers/favorites/me",
+							"host": [
+								"{{url}}offers"
+							],
+							"path": [
+								"favorites",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "favorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "102|kdi3EJrOAjEVPIrV9yBRL6tz7WpYGMuINYYoiip7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{url}}offers/1/favorite",
+							"host": [
+								"{{url}}offers"
+							],
+							"path": [
+								"1",
+								"favorite"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "All Categories ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost/boutiqui-back-end/public/api/seller/categories/all?page=0",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"boutiqui-back-end",
+								"public",
+								"api",
+								"seller",
+								"categories",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Privacy policy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}privacy_policy",
+					"host": [
+						"{{url}}privacy_policy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Privacy policy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}privacy_policy",
+							"host": [
+								"{{url}}privacy_policy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Dec 2021 09:47:55 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Dec 2021 09:47:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "Xfa30c6995dc0f7f2434445615d8c7809"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"privacy_policy\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Terms of use",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}terms_of_use",
+					"host": [
+						"{{url}}terms_of_use"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Privacy policy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}privacy_policy",
+							"host": [
+								"{{url}}privacy_policy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Dec 2021 09:47:55 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Dec 2021 09:47:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "Xfa30c6995dc0f7f2434445615d8c7809"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"privacy_policy\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "About_us",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}about_us",
+					"host": [
+						"{{url}}about_us"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "About_us",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}about_us",
+							"host": [
+								"{{url}}about_us"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Dec 2021 09:48:35 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Dec 2021 09:48:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X7b62df93425091abc2a543dc60b072ca"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"about_us\": \"\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Contact us",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subject\": \"Test contact us from user\",\r\n    \"message\": \"Message test from contact us of user\",\r\n    \"email\": \"user@app.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}reports",
+					"host": [
+						"{{url}}reports"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "stories by company",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}stories/company",
+							"host": [
+								"{{url}}stories"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X8a667f45a8b819b9b98801adf9961c97"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rhett Olson II\",\n            \"email\": \"mckenzie.leda@example.net\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": false,\n            \"facebook\": \"\",\n            \"whatsapp\": \"\",\n            \"snapchat\": \"\",\n            \"instagram\": \"\",\n            \"twitter\": \"\",\n            \"rate\": null,\n            \"latitude\": 20,\n            \"longitude\": 40,\n            \"address\": \"301 Gia Orchard Suite 593\\nLake Saraihaven, NV 29705-4212\",\n            \"description\": \"\",\n            \"social_media_visible\": true,\n            \"stories\": [\n                {\n                    \"id\": 1,\n                    \"image_url\": \"http://127.0.0.1:8000/storage/stories/img/AH2ltty0g3Dft6TgEOHe5fKvN.png\"\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/stories/company\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "change_password",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}category/6",
+					"host": [
+						"{{url}}category"
+					],
+					"path": [
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "stories by company",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}stories/company",
+							"host": [
+								"{{url}}stories"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X8a667f45a8b819b9b98801adf9961c97"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rhett Olson II\",\n            \"email\": \"mckenzie.leda@example.net\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": false,\n            \"facebook\": \"\",\n            \"whatsapp\": \"\",\n            \"snapchat\": \"\",\n            \"instagram\": \"\",\n            \"twitter\": \"\",\n            \"rate\": null,\n            \"latitude\": 20,\n            \"longitude\": 40,\n            \"address\": \"301 Gia Orchard Suite 593\\nLake Saraihaven, NV 29705-4212\",\n            \"description\": \"\",\n            \"social_media_visible\": true,\n            \"stories\": [\n                {\n                    \"id\": 1,\n                    \"image_url\": \"http://127.0.0.1:8000/storage/stories/img/AH2ltty0g3Dft6TgEOHe5fKvN.png\"\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/stories/company\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get domains list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}domains",
+					"host": [
+						"{{url}}domains"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get domains list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}domains",
+							"host": [
+								"{{url}}domains"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Nov 2021 09:57:00 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Nov 2021 09:57:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X7f8ee12999e64714b3624f7eeb40defc"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"aspernatur\",\n            \"description\": \"Unde sed asperiores tempora at ea unde voluptatum error. Eum unde inventore est dolore sed beatae qui.\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"ratione\",\n            \"description\": \"Amet voluptatem et harum corrupti dolores. Dolore maiores ipsa quia provident qui dolorum quos. Velit quaerat animi voluptates totam. Et est illum atque ad magnam in amet id.\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"odit\",\n            \"description\": \"Repellendus rem et quae alias quisquam. Ipsum id doloribus non omnis in molestiae dolorem at. Dolorem eum perspiciatis pariatur maiores vel.\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"dicta\",\n            \"description\": \"Rerum libero saepe sunt consequatur sint molestias. Beatae et odit excepturi quia ex voluptatibus pariatur. Ipsum a maxime tempore dolor architecto minus.\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"dolores\",\n            \"description\": \"Quam eveniet perspiciatis delectus enim nemo. Totam sit totam architecto aut hic provident quam. Culpa corrupti ut sequi laborum qui aspernatur doloribus nesciunt.\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"adipisci\",\n            \"description\": \"Omnis non non perspiciatis repellat illo. Excepturi rerum eos dolorum eius fugit. Voluptatem molestias minima consequuntur dolores ut. Minima dolorum veniam et et laborum consequuntur eveniet.\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"et\",\n            \"description\": \"Est placeat libero sed possimus nobis eligendi. Facere sunt consequatur accusamus amet. Aperiam fuga qui sit odio ea.\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"totam\",\n            \"description\": \"Aut ratione non enim. Blanditiis provident eligendi et animi. Ex non qui incidunt dolorum laborum.\"\n        },\n        {\n            \"id\": 9,\n            \"name\": \"illo\",\n            \"description\": \"Provident quae ipsum sequi ipsa consequatur. Odio earum quia distinctio adipisci ea deserunt. Et qui voluptate possimus saepe rerum totam. Consectetur sit doloremque assumenda minus ipsam et.\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"neque\",\n            \"description\": \"Quia voluptas aspernatur pariatur veritatis. Rem magnam ipsam officia rem harum atque error. Tenetur eaque in molestias omnis mollitia et maxime iste. Laudantium sit consequatur dolores eum quam.\"\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/company/domains?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/company/domains?page=2\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/company/domains?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 2,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/company/domains?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/company/domains?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/company/domains?page=2\",\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/company/domains\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 20\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get cities list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}cities",
+					"host": [
+						"{{url}}cities"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get cities list",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}cities",
+							"host": [
+								"{{url}}cities"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Nov 2021 09:57:07 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 04 Nov 2021 09:57:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X848cbebc8d2223f2ccb15cbe37aa670e"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Stammland\",\n            \"latitude\": 30,\n            \"longitude\": 38\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Port Audreanne\",\n            \"latitude\": 16,\n            \"longitude\": 39\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Carolehaven\",\n            \"latitude\": 28,\n            \"longitude\": 43\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Wardview\",\n            \"latitude\": 29,\n            \"longitude\": 39\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Port Melissa\",\n            \"latitude\": 16,\n            \"longitude\": 35\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Port Lavernmouth\",\n            \"latitude\": 28,\n            \"longitude\": 43\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Lake Wilbertown\",\n            \"latitude\": 27,\n            \"longitude\": 48\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Port Maribel\",\n            \"latitude\": 21,\n            \"longitude\": 45\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Jaybury\",\n            \"latitude\": 31,\n            \"longitude\": 39\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Schneiderhaven\",\n            \"latitude\": 27,\n            \"longitude\": 39\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/company/cities?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/company/cities?page=2\",\n        \"prev\": null,\n        \"next\": \"http://127.0.0.1:8000/api/company/cities?page=2\"\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 2,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/company/cities?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/company/cities?page=2\",\n                \"label\": \"2\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/company/cities?page=2\",\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/company/cities\",\n        \"per_page\": 10,\n        \"to\": 10,\n        \"total\": 20\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "stories by seller",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}stories/seller",
+					"host": [
+						"{{url}}stories"
+					],
+					"path": [
+						"seller"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "stories by company",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}stories/company",
+							"host": [
+								"{{url}}stories"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X8a667f45a8b819b9b98801adf9961c97"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rhett Olson II\",\n            \"email\": \"mckenzie.leda@example.net\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": false,\n            \"facebook\": \"\",\n            \"whatsapp\": \"\",\n            \"snapchat\": \"\",\n            \"instagram\": \"\",\n            \"twitter\": \"\",\n            \"rate\": null,\n            \"latitude\": 20,\n            \"longitude\": 40,\n            \"address\": \"301 Gia Orchard Suite 593\\nLake Saraihaven, NV 29705-4212\",\n            \"description\": \"\",\n            \"social_media_visible\": true,\n            \"stories\": [\n                {\n                    \"id\": 1,\n                    \"image_url\": \"http://127.0.0.1:8000/storage/stories/img/AH2ltty0g3Dft6TgEOHe5fKvN.png\"\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/stories/company\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "userexists",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}stories/seller",
+					"host": [
+						"{{url}}stories"
+					],
+					"path": [
+						"seller"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "stories by company",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}stories/company",
+							"host": [
+								"{{url}}stories"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X8a667f45a8b819b9b98801adf9961c97"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rhett Olson II\",\n            \"email\": \"mckenzie.leda@example.net\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": false,\n            \"facebook\": \"\",\n            \"whatsapp\": \"\",\n            \"snapchat\": \"\",\n            \"instagram\": \"\",\n            \"twitter\": \"\",\n            \"rate\": null,\n            \"latitude\": 20,\n            \"longitude\": 40,\n            \"address\": \"301 Gia Orchard Suite 593\\nLake Saraihaven, NV 29705-4212\",\n            \"description\": \"\",\n            \"social_media_visible\": true,\n            \"stories\": [\n                {\n                    \"id\": 1,\n                    \"image_url\": \"http://127.0.0.1:8000/storage/stories/img/AH2ltty0g3Dft6TgEOHe5fKvN.png\"\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/stories/company\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "announcements",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}announcements",
+					"host": [
+						"{{url}}announcements"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "stories by company",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}stories/company",
+							"host": [
+								"{{url}}stories"
+							],
+							"path": [
+								"company"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 23 Dec 2021 08:44:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.0.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "phpdebugbar-id",
+							"value": "X8a667f45a8b819b9b98801adf9961c97"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Rhett Olson II\",\n            \"email\": \"mckenzie.leda@example.net\",\n            \"phone\": \"770271561\",\n            \"country_code\": \"213\",\n            \"image\": \"http://127.0.0.1:8000/assets/admin/app-assets/images/user.png\",\n            \"state\": 1,\n            \"checked\": false,\n            \"facebook\": \"\",\n            \"whatsapp\": \"\",\n            \"snapchat\": \"\",\n            \"instagram\": \"\",\n            \"twitter\": \"\",\n            \"rate\": null,\n            \"latitude\": 20,\n            \"longitude\": 40,\n            \"address\": \"301 Gia Orchard Suite 593\\nLake Saraihaven, NV 29705-4212\",\n            \"description\": \"\",\n            \"social_media_visible\": true,\n            \"stories\": [\n                {\n                    \"id\": 1,\n                    \"image_url\": \"http://127.0.0.1:8000/storage/stories/img/AH2ltty0g3Dft6TgEOHe5fKvN.png\"\n                }\n            ]\n        }\n    ],\n    \"links\": {\n        \"first\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"last\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n        \"prev\": null,\n        \"next\": null\n    },\n    \"meta\": {\n        \"current_page\": 1,\n        \"from\": 1,\n        \"last_page\": 1,\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; السابق\",\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/user/stories/company?page=1\",\n                \"label\": \"1\",\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"التالي &raquo;\",\n                \"active\": false\n            }\n        ],\n        \"path\": \"http://127.0.0.1:8000/api/user/stories/company\",\n        \"per_page\": 10,\n        \"to\": 1,\n        \"total\": 1\n    }\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "445|nToZOTjXUFawUQHPuSzlAV8jroT7wa095dHEKXdN",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.request.headers.add({key: 'Accept', value: 'application/json' });",
+					"pm.request.headers.add({key: 'X-Requested-With', value: 'XMLHttpRequest' });"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://boutiqui.hexabytes.co/api/user/",
+			"type": "string"
+		}
+	]
+}
